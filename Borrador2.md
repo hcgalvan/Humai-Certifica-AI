@@ -186,3 +186,5 @@ Al recoger los datos de la anamnesis, peso, estatura y actividad que realiza hab
 <https://github.com/utkarsh-maheshwari/Dance-based-human-pose>
 <https://github.com/yinghanlong/dance_pose_estimation>
 <https://github.com/search?q=%22Dance%22+and+Pose+Estimation+Based&type=code>
+
+El Aprendizaje profundo, subconjunto del aprendizaje automático no supervisado, utiliza red neuronal para identificar patrones en imagenes, videos, sonidos y demas formas de datos no estructurados. Uno de estos modelos, La estimación de pose humana es una forma de identificación de patrones que utiliza redes neuronales convulsionales profundas en visión artificial modernas.
