@@ -1,4 +1,4 @@
-# Biomecánica: Análisis en tiempo real
+# Biomecánica & Redes Neuronales Convulcionales: Análisis en tiempo real
 
 La biomecánica, evalúa si en una determinada postura puede provocar sobrecarga en alguna estructura del aparato locomotor Fuente:https://www.ergonautas.upv.es/metodos/biomecanica/biomecanica-ayuda.php
 
