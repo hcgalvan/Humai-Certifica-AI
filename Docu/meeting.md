@@ -14,7 +14,7 @@ El fin propuesto es dar soporte a profesores de Educación física o gimnasios p
 ## Propuesta a estos problemas
 
 * Hacer un producto mínimo y viable como indicar si es correcto o incorrecto una pose luego de correr el evaluador.
-* Reunirnos el domingo 05-02-23 a las 17hs para ver avances de las herramientas.
+* Reunirnos el **domingo 05-02-23** a las **17hs** para ver avances de las herramientas.
 * Verificar datasets en diferentes repositorios conocidos y brindados en reuniones, sino consultar a Matías.
   
 ## Siguientes pasos
