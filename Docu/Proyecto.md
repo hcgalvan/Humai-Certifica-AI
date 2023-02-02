@@ -1,7 +1,5 @@
 # Biomecánica & Redes Neuronales Convulcionales: Análisis en tiempo real con Modelos genéricos y datos públicos.
 
-
-
 Ver documento "estudiosexplora.pdf" donde trata los diferentes desarrollos de estas tecnologías.
 
 Falta ver:
