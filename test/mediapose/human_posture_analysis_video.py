@@ -53,7 +53,7 @@ pose = mp_pose.Pose()
 
 if __name__ == "__main__":
     # For webcam input replace file name with 0.
-    file_name = 'input.mp4'
+    file_name = 'yoga-1.mp4'
     cap = cv2.VideoCapture(file_name)
 
     # Meta.
