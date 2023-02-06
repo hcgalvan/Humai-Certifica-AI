@@ -6,6 +6,14 @@ Hi human, <br />
 I'm Mr.Pose! :robot: :wave: <br />
 I help to estimate and measure exercises for humans. Lets do some exercise and keep the body fit. :muscle: :mechanical_arm:
 </p>
+Comando de test (el video debe estar en carpeta)
+No funcionaba ../data/font/... error en localizacion.<br />
+Entonces, escribe la localizacion con path completo.<br />
+Me funciona escribiendo de esta forma.
+
+``` python
+python mrpose.py --video "~/hcgmachlearn-gd/plank.mp4" --exercise plank
+```
 
 ## Description :scroll:
 
