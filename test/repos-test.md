@@ -26,3 +26,17 @@ https://github.com/spmallick/learnopencv/blob/master/README.md
 
 https://www.analyticsvidhya.com/blog/2022/03/pose-detection-in-image-using-mediapipe-library/
 https://github.com/Aman-Preet-Singh-Gulati/pose-detection-mediapipe
+
+---
+
+Fecha: 05.01.23
+
+https://github.com/nicknochnack?tab=repositories
+https://github.com/Overlrd/deadlift_CompVis_app
+
+
+develop a model that could detect body pose landmarcks and overlay them over real-time video feed to direct correct body posture for an excercise describe in a target video performed by a professional
+
+Additionally, we formulated a score for describing difference in the inference posture and posture stillness score, form the target posture irrespective of body position, shape and size.
+
+built an inference pipeline that was capable of delivering more than 20 FPS in real time, "detecting poses" and classifying them
