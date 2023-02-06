@@ -31,8 +31,27 @@ https://github.com/Aman-Preet-Singh-Gulati/pose-detection-mediapipe
 
 Fecha: 05.01.23
 
+
+https://www.youtube.com/watch?v=PGsAsuwBdw0
+
+https://www.youtube.com/watch?v=H7cGq0xIHbc
+
+https://www.youtube.com/watch?v=-5CSnwpUyps&t=16s
+
+https://d3js.org
+
+https://bigredbash.com.au/humble-beginnings
+
+Busqueda: <br>
+mediapipe real-time video feed to direct correct body posture for an excercise describe in a target video performed by a professional
+
+real-time video feed to direct correct body posture for an excercise describe in a target video performed by a professional
+
+develop a model that could detect body pose landmarcks and overlay them over real-time video feed to direct correct body posture
+
 https://github.com/nicknochnack?tab=repositories
 https://github.com/Overlrd/deadlift_CompVis_app
+
 
 
 develop a model that could detect body pose landmarcks and overlay them over real-time video feed to direct correct body posture for an excercise describe in a target video performed by a professional
