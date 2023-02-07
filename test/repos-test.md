@@ -45,6 +45,10 @@ https://bigredbash.com.au/humble-beginnings
 Busqueda: <br>
 mediapipe real-time video feed to direct correct body posture for an excercise describe in a target video performed by a professional
 
+desarrollar un modelo que pueda detectar puntos de referencia de la postura del cuerpo y superponerlos sobre la transmisión de video en tiempo real para dirigir la postura corporal correcta
+
+transmisión de video en vivo para dirigir la postura corporal correcta hacia un ejercicio descrito en un video de destino realizado por un profesional
+
 real-time video feed to direct correct body posture for an excercise describe in a target video performed by a professional
 
 develop a model that could detect body pose landmarcks and overlay them over real-time video feed to direct correct body posture

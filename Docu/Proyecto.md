@@ -2,6 +2,8 @@
 
 Ver documento "estudiosexplora.pdf" donde trata los diferentes desarrollos de estas tecnologías.
 
+https://teachablemachine.withgoogle.com/
+
 Falta ver:
 * repositorios que tratan dicho estudio/análisis
 * Datasets a utilizar
