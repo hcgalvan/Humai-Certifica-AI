@@ -22,6 +22,9 @@ Una vez activado el entorno, construir:
 Lanzar app:
 *  `python main.py`
 
+<img alt='captura pose' src='https://raw.githubusercontent.com/hcgalvan/Humai-Certifica-AI/main/test/poses/images/app.png'>
+
+<img alt='captura pose' src='https://raw.githubusercontent.com/hcgalvan/Humai-Certifica-AI/main/test/poses/images/entorno.png'>
 
 **References** :
   - 
