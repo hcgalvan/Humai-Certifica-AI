@@ -91,10 +91,10 @@ def detect():
 		body_language_class= model.predict(x)[0]
 		
 		if body_language_class or body_language_prob:
-			print('predicted')
+			print(f'predicted {body_language_class}')
 		else :
 			print('prediction error')
-
+		
 		if body_language_class == "derecha" and body_language_prob[body_language_prob.argmax()] >= 0.7:
 			current_stage = "derecha"
 			
