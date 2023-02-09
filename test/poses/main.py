@@ -58,7 +58,7 @@ mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(min_tracking_confidence=0.5, min_detection_confidence=0.5)
 
-with open('manos.pkl', 'rb') as f:
+with open('../squat.pkl', 'rb') as f:
 	model = pickle.load(f)
 
 cap = cv2.VideoCapture(0)
@@ -95,11 +95,11 @@ def detect():
 		else :
 			print('prediction error')
 		
-		if body_language_class == "derecha" and body_language_prob[body_language_prob.argmax()] >= 0.7:
-			current_stage = "derecha"
+		if body_language_class == "flexionado" and body_language_prob[body_language_prob.argmax()] >= 0.7:
+			current_stage = "flexionado"
 			
-		elif current_stage=="derecha" and body_language_class=="izquierda" and body_language_prob[body_language_prob.argmax()] >= 0.7:
-			current_stage = "izquierda"
+		if current_stage=="flexionado" and body_language_class=="extendido" and body_language_prob[body_language_prob.argmax()] >= 0.7:
+			current_stage = "extendido"
 			counter +=1
 		
 	except Exception as e:
