@@ -11,7 +11,7 @@ Aquí aprendemos a:
   ## Comandos para Construir y Lanzar app
 
   ### Considere crear un entorno
-* `python venv -m venvpose`
+* `python -m venv venvpose`
 
 Si estas en Windows con VsCode, dentro de carpeta app:
 * `venvpose\Scripts\Activate.ps1`

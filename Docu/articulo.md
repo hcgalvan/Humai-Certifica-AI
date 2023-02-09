@@ -1,4 +1,4 @@
-# Biomecánica & Redes Neuronales Convulcionales: Análisis en tiempo real con Modelos genéricos y datos públicos.
+# Biomecánica: Análisis en tiempo real con ML .
 
 # Resumen
 
@@ -22,19 +22,18 @@ Específicamente, entrena una arquitectura pre-entrenada con posturas correctas 
 MediaPipe Pose es una solución de Machine Learning para el seguimiento de la postura del cuerpo de alta fidelidad, que infiere 33 puntos de referencia 3D y una máscara de segmentación de fondo en todo el cuerpo a partir de fotogramas de video RGB utilizando BlazePose.
 
 
-
-La solución utiliza una canalización ML detector-tracker de dos pasos.
-Usando un detector, la canalización localiza primero la región de interés (ROI) de la persona/postura dentro del marco. Para los casos de uso de video, el detector se invoca solo según sea necesario, es decir, para el primer cuadro y cuando el rastreador ya no pudo identificar la presencia de la pose del cuerpo en el cuadro anterior
+La solución utiliza una canalización Machine Learning detector-tracker de dos pasos.
+Usando un detector, la canalización localiza primero la región de interés (ROI) de la persona/postura dentro del marco. Para los casos de uso de video, el detector se invoca solo según sea necesario, es decir, para el primer cuadro y cuando el rastreador ya no pudo identificar la presencia de la pose del cuerpo en el cuadro anterior.
 
 Modelo de detección de persona/pose (detector BlazePose).
 Predice explícitamente dos puntos clave virtuales adicionales que describen firmemente el centro, la rotación y la escala del cuerpo humano como un círculo. Inspirado en el hombre de Vitruvio de Leonardo, predecimos el punto medio de las caderas de una persona, el radio de un círculo que circunscribe a toda la persona y el ángulo de inclinación de la línea que conecta los puntos medios del hombro y la cadera.
 
-pose_landmarks
+`pose_landmarks`
 Cada fotograma, es conformado por una lista de 33 puntos de referencia de la pose. Cada punto de referencia consta de lo siguiente:
 
-x e y: Coordenadas del punto de referencia normalizadas [0.0, 1.0] por el ancho y la altura de la imagen, respectivamente.
-z: Representa la profundidad del punto de referencia con la profundidad en el punto medio de las caderas como origen, y cuanto menor sea el valor, más cerca estará el punto de referencia de la cámara. La magnitud de z utilza aproximadamente la misma escala que x.
-visibility: Un valor [0.0, 1.0]que indica la probabilidad de que el punto de referencia sea visible (presente y no ocluido) en la imagen.
+`x` e `y`: Coordenadas del punto de referencia normalizadas [0.0, 1.0] por el ancho y la altura de la imagen, respectivamente.
+`z`: Representa la profundidad del punto de referencia con la profundidad en el punto medio de las caderas como origen, y cuanto menor sea el valor, más cerca estará el punto de referencia de la cámara. La magnitud de z utilza aproximadamente la misma escala que x.
+`visibility`: Un valor [0.0, 1.0] indica la probabilidad que el punto de referencia sea visible (presente y no presente) en la imagen.
 
 ---
 BlazeFace: 
@@ -43,35 +42,42 @@ MediaPipe Face Detection es una solución ultrarrápida de detección de rostros
 
 ---
 
-cvtColor(): Convierte una imagen de un espacio de color a otro. Color space conversion codes: CV_BGR2GRAY, CV_RGB2GRAY, CV_BGR2YCrCb, CV_YCrCb2BGR, CV_RGB2HSV, CV_HLS2RGB, CV_HLS2Lab.
+`cvtColor()`: Convierte una imagen de un espacio de color a otro. Color space conversion codes: CV_BGR2GRAY, CV_RGB2GRAY, CV_BGR2YCrCb, CV_YCrCb2BGR, CV_RGB2HSV, CV_HLS2RGB, CV_HLS2Lab.
 
-Al leer un archivo de imagen en color, OpenCV imread()lee como una matriz NumPy `ndarray` de `row (height) x column (width) x color (3)`. El orden de color es BGR (azul, verde, rojo).
+`COLOR_BGR2RGB`Cuando el archivo de imagen se lee con la función `imread()`, el orden de los colores es BGR (azul, verde, rojo) y lo convierte a rojo, verde, azul.
+BGR y RGB no son espacios de color, convenciones para el orden de los diferentes canales de color, se apilan para formar un píxel.(2)
+Al leer un archivo de imagen en color, OpenCV `imread()`lee como una matriz NumPy `ndarray` de `row (height) x column (width) x color (3)`.
+(2) https://stackoverflow.com/questions/50963283/imshow-doesnt-need-convert-from-bgr-to-rgb
 
+
+Mientras que BGR se usa consistentemente en OpenCV, la mayoría de las otras bibliotecas de procesamiento de imágenes usan el orden RGB por ello su necesaria conversion.
 
 Parámetros
-
-`ret, frame = cap.read()`
-* ret: Tiene un valor booleano. Es verdadero si el marco se lee con éxito, de lo contrario, es falso.
-* fotograma: este es el fotograma real que se lee. Este marco se puede almacenar en una variable y se puede usar de manera similar a cómo cargamos imágenes individuales.
+`Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5`, entonces
+`min_detection_confidence`: Define Valor mínimo de confianza ( [0.0, 1.0]) del modelo de detección de personas para que la detección se considere exitosa. Predeterminado a 0.5
+`min_tracking_confidence`: Define valor mínimo de confianza dondel el mínimo es ( [0.0, 1.0]), para que el modelo de seguimiento de puntos de referencia se consideren rastreados correctamente, sino se invocará la detección en la siguiente imagen. Predeterminado a 0.5
+`ret, frame = cap.read()`: 
+* `ret`: Tiene un valor booleano. Es verdadero si el marco se lee con éxito, de lo contrario, es falso.
+* `frame`: este es el fotograma real que se lee. Este marco se puede almacenar en una variable y se puede usar de manera similar a cómo cargamos imágenes individuales.
 
 `cv2.isOpened()`
-* isOpened(): Verifica si está inicializado la cámara
+* `isOpened()`: Verifica si está inicializado la cámara
 
 `cap = cv2.VideoCapture(0)`
 `alto = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)`
 `ancho = cap.get(cv2.CAP_PROP_FRAME_WIDTH)`
 `fps = cap.get(cv2.CAP_PROP_FPS)`
 `cv2.VideoWriter(VIDEO_PATH, cv2.VideoWriter_fourcc('P','I','M','1'), fps, (int(ancho), int(alto)))`
-* fourcc: se utiliza para comprimir los fotogramas, tiene 4 caracteres para definir el códec. Por ejemplo, VideoWriter.fourcc('P','I','M','1') es un códec MPEG-1.
-* fps: Es para definir velocidad de fotogramas de la transmisión de video creada.
-* get(CAP_PROP_FPS) o get(CV_CAP_PROP_FPS): obtiene los fotogramas por segundo de la cámara.
-* get(cv2.CAP_PROP_FRAME_HEIGHT), get(cv2.CAP_PROP_FRAME_WIDTH): obtiene valores de la altura y ancho del marco de cámara.
+* `fourcc`: se utiliza para comprimir los fotogramas, tiene 4 caracteres para definir el códec. Por ejemplo, VideoWriter.fourcc('P','I','M','1') es un códec MPEG-1.
+* `fps`: Es para definir velocidad de fotogramas de la transmisión de video creada.
+* `get(CAP_PROP_FPS)` o `get(CV_CAP_PROP_FPS)`: obtiene los fotogramas por segundo de la cámara.
+* `get(cv2.CAP_PROP_FRAME_HEIGHT)`, `get(cv2.CAP_PROP_FRAME_WIDTH)`: obtiene valores de la altura y ancho del marco de la cámara.
 
 `cv2.waitKey(10)`
-* waitKey(): Espera un evento, en base a un tiempo en milisegundos, solo si hay una ventana activa.
+* `waitKey()`: Espera un evento, en base a un tiempo en milisegundos, solo si hay una ventana activa.
 
 `cap.release()`
-* release(): Libera el recurso, la cámara que está utilizando.
+* `release()`: Libera el recurso, la cámara que está utilizando.
 
 
 # Resultados
