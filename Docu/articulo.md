@@ -18,18 +18,14 @@ Específicamente, entrena una arquitectura pre-entrenada con posturas correctas 
 
 
 # Materiales y Métodos
+Una de las tareas más difíciles en la visión por computadora es determinar el alto grado de configuración a realizar. Ya sea determinar la soltura del cuerpo humano con todas sus extremidades y la complejidad de resolver límites. Ya sea encontrar fronteras de partes similares o variaciones debido a la ropa, como el tipo de cuerpo, la iluminación, y muchos otros factores. Este problema se define como las técnicas de visión por computadora que predicen la ubicación de varios puntos clave humanos (articulaciones y puntos de referencia) como hombros, codos, muñecas, caderas, rodillas, tobillos y cuello.
 
 MediaPipe Pose es una solución de Machine Learning para el seguimiento de la postura del cuerpo de alta fidelidad, que infiere 33 puntos de referencia 3D y una máscara de segmentación de fondo en todo el cuerpo a partir de fotogramas de video RGB utilizando BlazePose.
 
+# Mediapipe Pose y Opencv: La red troncal de entrada (backbone).
 
-La solución utiliza una canalización Machine Learning detector-tracker de dos pasos.
-Usando un detector, la canalización localiza primero la región de interés (ROI) de la persona/postura dentro del marco. Para los casos de uso de video, el detector se invoca solo según sea necesario, es decir, para el primer cuadro y cuando el rastreador ya no pudo identificar la presencia de la pose del cuerpo en el cuadro anterior.
-
-Modelo de detección de persona/pose (detector BlazePose).
-Predice explícitamente dos puntos clave virtuales adicionales que describen firmemente el centro, la rotación y la escala del cuerpo humano como un círculo. Inspirado en el hombre de Vitruvio de Leonardo, predecimos el punto medio de las caderas de una persona, el radio de un círculo que circunscribe a toda la persona y el ángulo de inclinación de la línea que conecta los puntos medios del hombro y la cadera.
-
-`pose_landmarks`
-Cada fotograma, es conformado por una lista de 33 puntos de referencia de la pose. Cada punto de referencia consta de lo siguiente:
+MediaPipe Pose es una solución utiliza una canalización Machine Learning «detector-tracker» de dos pasos. En el primer paso, el detector facilita el fotograma de entrada a la capa convolucional que produce un mapa de características convolucionales. Luego, una red neuronal utiliza este mapa para predecir la región. A partir de la región predicha se remodela, utilizando una capa de agrupación de región de interés (RoI). En el segundo paso, el «tracker» predice los 33 puntos claves contenidos en esta ROI. Para tener un rendimiento rápido, condensado en unos milisegundos por fotograma, y lograr en tiempo real la canalización de ML compuesto por la detección y seguimiento de la pose, se observa que la señal más fuerte a la red neuronal encima del torso es la cara de la persona (debido al alto contraste y pequeñas variaciones). En el caso de un vıdeo, el detector se ejecuta solo en el primer fotograma. Para los fotogramas siguientes, se deriva la ROI que contiene los puntos clave obtenidos anteriormente, como se describe en la figura siguiente
+En la salida del modelo denominado `pose_landmarks` Cada fotograma, es conformado por una lista de 33 puntos de referencia de la pose. Cada punto de referencia consta de lo siguiente:
 
 `x` e `y`: Coordenadas del punto de referencia normalizadas [0.0, 1.0] por el ancho y la altura de la imagen, respectivamente.
 `z`: Representa la profundidad del punto de referencia con la profundidad en el punto medio de las caderas como origen, y cuanto menor sea el valor, más cerca estará el punto de referencia de la cámara. La magnitud de z utilza aproximadamente la misma escala que x.
