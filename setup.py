@@ -1,20 +1,21 @@
-#######
-# ETL "Extract, Transform, and Load." 
-#######
+import setuptools
 
-from setuptools import setup
+with open("DESCRIPTION.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
-VERSION = "0.0.1dev0"
-
-setup(
-    name='PNN-practico',
-    version=VERSION,
-    description='main etl for pose neural network model',
-    author='',
-    author_email='',
-    classifiers=[
-        'Programming Language :: Python :: 3.9.1',
-    ],
+setuptools.setup(
+    name='humai-certifica-ai',
+    version='0.1.0',
+    author='Hugo C Galvan',
+    author_email='hcgalvan@gmail.com',
+    description='Evaluador de posturas embebido en app',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url='https://github.com/hcgalvan/humai-certifica-ai',
+    project_urls = {
+        "Bug Tracker": "https://github.com/hcgalvan/humai-certifica-ai/issues"
+    },
+    license='MIT',
     packages=['pnn_mvp'],
-    # install_requires=['scikit-learn==0.23.0']
+    install_requires=['requests'],
 )
