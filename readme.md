@@ -21,9 +21,10 @@ Una vez activado el entorno, construir:
 Lanzar app:
 *  `python main.py`
 
+## Mapa a las distintas carpetas y archivos
+
+
 <img alt='captura pose' src='https://raw.githubusercontent.com/hcgalvan/Humai-Certifica-AI/main/test/poses/images/app.png'>
 
 <img alt='captura pose' src='https://raw.githubusercontent.com/hcgalvan/Humai-Certifica-AI/main/test/poses/images/entorno.png'>
-# Comandos para build  / deploy, otros comandos de cómo se usa, ejemplos
 
-# Mapa a las distintas carpetas y archivos
