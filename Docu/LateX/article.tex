@@ -63,19 +63,19 @@ Las redes neuronales convulcionales de la visión, rama específica del aprendiz
 profundo, emula el sistema visual humano. Esta arquitectura utiliza 
 la visión artificial para identificar patrones, agrupando distintos 
 modelos de aplicación. El grupo que investiga la estimación de la pose
- humana, ha logrado avances en rendimientos de eficiencia y bajo consumo
- para análisis en tiempo real.
+humana, ha logrado avances en rendimientos de eficiencia y bajo consumo
+para análisis en tiempo real.
 
- Una de las tareas más difíciles en la visión por computadora 
- es resolver el alto grado de configuración a realizar. 
- Ya sea determinar la soltura del cuerpo humano con todas sus extremidades
-  y la complejidad de resolver límites. 
+Una de las tareas más difíciles en la visión por computadora 
+es resolver el alto grado de configuración a realizar. 
+Ya sea determinar la soltura del cuerpo humano con todas sus extremidades
+y la complejidad de resolver límites. 
 Ya sea encontrar fronteras de partes similares o variaciones debido 
 a la ropa, como el tipo de cuerpo, la iluminación, y muchos otros factores. 
 Este problema se define como las técnicas de visión por computadora 
 que predicen la ubicación de varios puntos clave humanos (articulaciones y puntos de referencia)
- como hombros, codos, muñecas, caderas, rodillas, tobillos y cuello.\\
- {\noindent \em En esta parte irán los artículos con estado de arte.}\\
+como hombros, codos, muñecas, caderas, rodillas, tobillos y cuello.\\
+{\noindent \em En esta parte irán los artículos con estado de arte.}\\
 
 Sin embargo, diferentes estudios enfocaron su esfuerzo a generar 
 arquitecturas optimizadas en reconocimiento de posturas y artículos específicos avanzaron 
@@ -215,8 +215,15 @@ En particular,  \textit{StandardScaler} transforma a x en cantidad de desviacion
 
 $x\rightarrow \frac{x-\mu}{\sigma}$
 
-\subsection{Evaluación del algoritmo}
-Estamos interesandos en problemas de clasificación en el que queremos aprender a asignar 
+\subsection{Entrenamiento}
+
+Este primer apartado, explica el proceso operativo del enfoque discriminativo de clasificación
+utilizando Regresión logística y otros métodos: RidgeClassifier, RandomForestClassifier, GradientBoostingClassifier
+
+Partimos de una clasificación binaria para luego eventualmente ampliar la clasificación.
+
+
+Estamos interesados en problemas de clasificación en el que queremos aprender a asignar 
 una clase $\mathcal{C}_{k}$ a un dato $x$ teniendo como datos de entrenamiento un conjunto 
 etiquetado $x_{\text{train}},t_{\text{train}}$
 
@@ -308,6 +315,8 @@ $$p(\mathcal{C}_{1}|x)\geq p(\mathcal{C}_{2}|x)$$
 Dado que tenemos probabilidades que suman uno, este criterio pone la \textit{frontera de decisión} en
 
 $$p(\mathcal{C}_{1}|x)=0.5$$
+
+\subsection{Evaluación del algoritmo}
 
 Métricas : Precisión/Exhaustividad
 
