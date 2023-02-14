@@ -97,12 +97,20 @@ justificado en la rápidez de cálculo y devolución en tiempo real.
 
 \section{Materiales y Métodos}
 
-\subsection{MediaPipe Pose}
-MediaPipe Pose es una solución de google, que utiliza 
-una canalización Machine Learning \textit{detector-tracker}
+\subsection{MediaPipe}
+MediaPipe es una solución de google,  para trabajar con vídeos e imágenes en 
+tiempo real, con el fin de detectar objetos y elementos con contenido semántico
+(detección de la cara, skeleton tracking o estimación de la pose de objetos y personas, entre otros).
+se basa en una serie de grafos formados por una determinada cantidad de puntos de referencia o landmarks,
+dependiendo de la solución por la que se haya optado, unidos mediante un número de líneas.
+Actualmente MediaPipe cuenta con un total de dieciséis modelos basados en Machine Learning
+, así como la capacidad de implementarse en hasta seis lenguajes de programación.
+Para este proyecto se necesitará realizar un seguimiento y reconocimiento de una persona, por
+ende, la solución que se ha decidido utilizar ha sido la denominada Pose.
+El modelo MediaPipe Pose, utiliza una canalización Machine Learning \textit{detector-tracker}
 de dos pasos. En el primer paso, el detector facilita 
 el fotograma de entrada a la capa convolucional 
-que produce un mapa de características convolucionales. 
+que produce un mapa de características convolucionales.
 Luego, una red neuronal utiliza este mapa para predecir 
 la región. A partir de la región predicha se remodela, 
 utilizando una capa de agrupación de región de interés (RoI). 
@@ -118,7 +126,6 @@ En el segundo paso, el tracker predice los 33 puntos claves
  se deriva la ROI que contiene los puntos clave obtenidos 
  anteriormente, como se describe en la figura siguiente
 
-
  \textit{x} e \textit{y}: Coordenadas del punto de referencia 
  normalizadas [0.0, 1.0] por el ancho y la altura de la imagen, 
  respectivamente.
@@ -130,7 +137,8 @@ En el segundo paso, el tracker predice los 33 puntos claves
  \textit{visibility}: Un valor [0.0, 1.0] indica la probabilidad 
  que el punto de referencia sea visible (presente y no presente) en 
  la imagen.
-
+ Pose se puede ejecutar en prácticamente cualquier dispositivo móvil,
+ ordenador o incluso desde el propio navegador.
 Parámetros utilizados
 
 \textit{Pose(min\_detection\_confidence=0.5, min\_tracking\_confidence=0.5)}:\\

@@ -2,12 +2,12 @@
 ["bibtex article"] 0 "article.aux" "article.bbl" "article" 0 -1
   "./article.bib" 1676161044 557 a06b82640146f3e88943790241b04374 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "article.aux" 1676290193 1511 13c925c4d7c171e729a1e3cf3b2746e3 "pdflatex"
+  "article.aux" 1676332163 1506 6753922848f6f3e2df6c52c21b23a371 "pdflatex"
   (generated)
   "article.bbl"
   "article.blg"
   (rewritten before read)
-["pdflatex"] 1676290192 "c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex" "article.pdf" "article" 1676290194 2
+["pdflatex"] 1676332162 "c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex" "article.pdf" "article" 1676332164 2
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1676170273 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1676161109 9292 d2f78911e4174de67d8623d67c3ec981 ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1674225493 23172509 3f077345279cf4113fd0b885a26240d4 ""
@@ -94,11 +94,11 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "article.aux" 1676290193 1511 13c925c4d7c171e729a1e3cf3b2746e3 "pdflatex"
+  "article.aux" 1676332163 1506 6753922848f6f3e2df6c52c21b23a371 "pdflatex"
   "article.bbl" 0 -1 0 "bibtex article"
-  "article.out" 1676290193 1042 6e1ed3f0614bb800ef51dade60e4fdf9 "pdflatex"
-  "article.tex" 1676290189 17861 3fe2038cc5f66842e7a0162252cb7a45 ""
-  "c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex" 1676290189 17861 3fe2038cc5f66842e7a0162252cb7a45 ""
+  "article.out" 1676332163 1014 06d2344b30ad43a286372dab515c9294 "pdflatex"
+  "article.tex" 1676332159 18771 5d39648d4b2f0446edfe36bb7bd76118 ""
+  "c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex" 1676332159 18771 5d39648d4b2f0446edfe36bb7bd76118 ""
   "jmlr2e.sty" 1676160898 13851 ccfb3af9c2c8514c6f47bd8550ef6e6c ""
   (generated)
   "article.aux"

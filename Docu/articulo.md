@@ -176,3 +176,6 @@ Si pudiésemos mover este umbral cambiaríamos la precisión y la exhaustividad.
 # Discusión
 
 # Literatura Citada
+https://www.raynersmale.com/blog/2014/1/31/optimising-your-squat
+
+https://squatuniversity.com/2016/04/20/the-real-science-of-the-squat/

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.20)  13 FEB 2023 09:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.20)  13 FEB 2023 20:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -246,22 +246,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--79
 [1{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1540) has occurred while \output is active []
 
  [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 208.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 216.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 208.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 216.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:213: Undefined control sequence.
-l.213 etiquetado $x_{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:221: Undefined control sequence.
+l.221 etiquetado $x_{\text
                           {train}},t_{\text{train}}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -269,8 +269,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:213: Undefined control sequence.
-l.213 etiquetado $x_{\text{train}},t_{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:221: Undefined control sequence.
+l.221 etiquetado $x_{\text{train}},t_{\text
                                            {train}}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -278,8 +278,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:218: Undefined control sequence.
-l.218 ...namiento un conjunto etiquetado $x_{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:226: Undefined control sequence.
+l.226 ...namiento un conjunto etiquetado $x_{\text
                                                   {train}},t_{\text{train}}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -287,8 +287,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:218: Undefined control sequence.
-l.218 ...nto etiquetado $x_{\text{train}},t_{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:226: Undefined control sequence.
+l.226 ...nto etiquetado $x_{\text{train}},t_{\text
                                                   {train}}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -297,17 +297,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--232
+Underfull \hbox (badness 10000) in paragraph at lines 236--240
 
  []
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:241: Undefined control sequence.
-l.241 ...nica medición, la verosimilitud $p(\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:249: Undefined control sequence.
+l.249 ...nica medición, la verosimilitud $p(\text
                                                   {t}|\vec{x},\vec{w})$ es d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -315,66 +315,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:245: Undefined control sequence.
-l.245 $p(\text
-              {T}|X,\vec{w})=\prod_{n=1}^{N}y^{t_n}_{n}(1-y_{n})^{1-t_n}$, d...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:248: Undefined control sequence.
-<recently read> \text 
-                      
-l.248 $\text
-            {Ln }p(\text{T}|\vec{w})=\sum_{n=1}^{N}(t_{n}\text{Ln }y_{n}+(1-...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:248: Undefined control sequence.
-l.248 $\text{Ln }p(\text
-                        {T}|\vec{w})=\sum_{n=1}^{N}(t_{n}\text{Ln }y_{n}+(1-...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:248: Undefined control sequence.
-l.248 ...ext{T}|\vec{w})=\sum_{n=1}^{N}(t_{n}\text
-                                                  {Ln }y_{n}+(1-t_{n})\text{...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:248: Undefined control sequence.
-l.248 ...}^{N}(t_{n}\text{Ln }y_{n}+(1-t_{n})\text
-                                                  {Ln }(1-y_{n}))$.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 [4]
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:252: Undefined control sequence.
-l.252 $$E(\vec{w})=-\sum_{n=1}^{N}(t_{n}\text
-                                             {ln}y_{n}+(1-t_{n})\text{ln}(1-...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:252: Undefined control sequence.
-l.252 ...1}^{N}(t_{n}\text{ln}y_{n}+(1-t_{n})\text
-                                                  {ln}(1-y_{n}))$$
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:253: Undefined control sequence.
+l.253 $p(\text
+              {T}|X,\vec{w})=\prod_{n=1}^{N}y^{t_n}_{n}(1-y_{n})^{1-t_n}$, d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -384,7 +328,63 @@ and I'll forget about whatever was undefined.
 c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:256: Undefined control sequence.
 <recently read> \text 
                       
-l.256 Si $t_{n}=1$, tiene en cuenta $\text
+l.256 $\text
+            {Ln }p(\text{T}|\vec{w})=\sum_{n=1}^{N}(t_{n}\text{Ln }y_{n}+(1-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:256: Undefined control sequence.
+l.256 $\text{Ln }p(\text
+                        {T}|\vec{w})=\sum_{n=1}^{N}(t_{n}\text{Ln }y_{n}+(1-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:256: Undefined control sequence.
+l.256 ...ext{T}|\vec{w})=\sum_{n=1}^{N}(t_{n}\text
+                                                  {Ln }y_{n}+(1-t_{n})\text{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:256: Undefined control sequence.
+l.256 ...}^{N}(t_{n}\text{Ln }y_{n}+(1-t_{n})\text
+                                                  {Ln }(1-y_{n}))$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:260: Undefined control sequence.
+l.260 $$E(\vec{w})=-\sum_{n=1}^{N}(t_{n}\text
+                                             {ln}y_{n}+(1-t_{n})\text{ln}(1-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:260: Undefined control sequence.
+l.260 ...1}^{N}(t_{n}\text{ln}y_{n}+(1-t_{n})\text
+                                                  {ln}(1-y_{n}))$$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:264: Undefined control sequence.
+<recently read> \text 
+                      
+l.264 Si $t_{n}=1$, tiene en cuenta $\text
                                           {Ln }y_{n}$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -392,10 +392,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:259: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:267: Undefined control sequence.
 <recently read> \text 
                       
-l.259 Si $t_{n}=0$, tiene en cuenta $\text
+l.267 Si $t_{n}=0$, tiene en cuenta $\text
                                           {Ln }1-y_{n}$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -403,8 +403,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:270: Undefined control sequence.
-l.270 $\vec{w}^{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:278: Undefined control sequence.
+l.278 $\vec{w}^{\text
                      {nuevo}}=\vec{w}^{\text{viejo}}-\text{H}^{-1}\nabla E(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -412,8 +412,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:270: Undefined control sequence.
-l.270 $\vec{w}^{\text{nuevo}}=\vec{w}^{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:278: Undefined control sequence.
+l.278 $\vec{w}^{\text{nuevo}}=\vec{w}^{\text
                                             {viejo}}-\text{H}^{-1}\nabla E(\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -421,8 +421,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:270: Undefined control sequence.
-l.270 ...text{nuevo}}=\vec{w}^{\text{viejo}}-\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:278: Undefined control sequence.
+l.278 ...text{nuevo}}=\vec{w}^{\text{viejo}}-\text
                                                   {H}^{-1}\nabla E(\vec{w})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -430,10 +430,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:272: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:280: Undefined control sequence.
 <recently read> \text 
                       
-l.272 ...c{w})$ es el gradiente del error y $\text
+l.280 ...c{w})$ es el gradiente del error y $\text
                                                   {H}$ es la matriz Hessiana.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -441,8 +441,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:276: Undefined control sequence.
-l.276 $\vec{w}^{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:284: Undefined control sequence.
+l.284 $\vec{w}^{\text
                      {nuevo}}=( \Phi^{T}\text{R}\Phi )^{-1}\Phi^{T}\text{R}\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -450,8 +450,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:276: Undefined control sequence.
-l.276 $\vec{w}^{\text{nuevo}}=( \Phi^{T}\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:284: Undefined control sequence.
+l.284 $\vec{w}^{\text{nuevo}}=( \Phi^{T}\text
                                              {R}\Phi )^{-1}\Phi^{T}\text{R}\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -459,8 +459,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:276: Undefined control sequence.
-l.276 ... \Phi^{T}\text{R}\Phi )^{-1}\Phi^{T}\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:284: Undefined control sequence.
+l.284 ... \Phi^{T}\text{R}\Phi )^{-1}\Phi^{T}\text
                                                   {R}\text{z}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -468,8 +468,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:276: Undefined control sequence.
-l.276 ...}\text{R}\Phi )^{-1}\Phi^{T}\text{R}\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:284: Undefined control sequence.
+l.284 ...}\text{R}\Phi )^{-1}\Phi^{T}\text{R}\text
                                                   {z}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -477,10 +477,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:278: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:286: Undefined control sequence.
 <recently read> \text 
                       
-l.278 Con $\Phi$ la matriz de diseño, $\text
+l.286 Con $\Phi$ la matriz de diseño, $\text
                                              {R}$ la matriz diagonal cuyos e...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -488,10 +488,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:278: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:286: Undefined control sequence.
 <recently read> \text 
                       
-l.278 ...s elementos son $y_{n}(1-y_{n})$ y $\text
+l.286 ...s elementos son $y_{n}(1-y_{n})$ y $\text
                                                   {z}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -499,10 +499,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:281: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:289: Undefined control sequence.
 <recently read> \text 
                       
-l.281 $\text
+l.289 $\text
             {z}=\Phi\vec{w}^{\text{viejo}}-\text{R}^{-1}(\text{Y}-\text{T})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -510,8 +510,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:281: Undefined control sequence.
-l.281 $\text{z}=\Phi\vec{w}^{\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:289: Undefined control sequence.
+l.289 $\text{z}=\Phi\vec{w}^{\text
                                   {viejo}}-\text{R}^{-1}(\text{Y}-\text{T})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -519,8 +519,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:281: Undefined control sequence.
-l.281 $\text{z}=\Phi\vec{w}^{\text{viejo}}-\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:289: Undefined control sequence.
+l.289 $\text{z}=\Phi\vec{w}^{\text{viejo}}-\text
                                                 {R}^{-1}(\text{Y}-\text{T})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -528,8 +528,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:281: Undefined control sequence.
-l.281 ...vec{w}^{\text{viejo}}-\text{R}^{-1}(\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:289: Undefined control sequence.
+l.289 ...vec{w}^{\text{viejo}}-\text{R}^{-1}(\text
                                                   {Y}-\text{T})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -537,8 +537,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:281: Undefined control sequence.
-l.281 ...text{viejo}}-\text{R}^{-1}(\text{Y}-\text
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:289: Undefined control sequence.
+l.289 ...text{viejo}}-\text{R}^{-1}(\text{Y}-\text
                                                   {T})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -546,10 +546,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:283: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:291: Undefined control sequence.
 <recently read> \text 
                       
-l.283 Con $\text
+l.291 Con $\text
                 {Y}$ e $\text{T}$ los vectores de predicciones y respuestas ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -557,10 +557,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:283: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:291: Undefined control sequence.
 <recently read> \text 
                       
-l.283 Con $\text{Y}$ e $\text
+l.291 Con $\text{Y}$ e $\text
                              {T}$ los vectores de predicciones y respuestas ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -568,10 +568,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:284: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:292: Undefined control sequence.
 <recently read> \text 
                       
-l.284 ... entran varias veces: en la matriz $\text
+l.292 ... entran varias veces: en la matriz $\text
                                                   {R}$, en el vector $\text{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -579,10 +579,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:284: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:292: Undefined control sequence.
 <recently read> \text 
                       
-l.284 ...la matriz $\text{R}$, en el vector $\text
+l.292 ...la matriz $\text{R}$, en el vector $\text
                                                   {Y}$ y
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -590,10 +590,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:285: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:293: Undefined control sequence.
 <recently read> \text 
                       
-l.285 explicitamente en $\text
+l.293 explicitamente en $\text
                               {z}$. Es por esto que es iterativo.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -601,8 +601,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
-l.308 $$\text
+[5]
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
+l.316 $$\text
              {Exactitud = }\frac{\text{VP}+\text{VN}}{\text{VP}+\text{FP}+\t...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -610,10 +611,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
 <argument> \text 
                  {VP}+\text {VN}
-l.308 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
+l.316 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
                                                   $$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -621,10 +622,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
 <argument> \text {VP}+\text 
                             {VN}
-l.308 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
+l.316 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
                                                   $$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -632,10 +633,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
 <argument> \text 
                  {VP}+\text {FP}+\text {VN}+\text {FN}
-l.308 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
+l.316 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
                                                   $$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -643,10 +644,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
 <argument> \text {VP}+\text 
                             {FP}+\text {VN}+\text {FN}
-l.308 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
+l.316 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
                                                   $$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -654,10 +655,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
 <argument> \text {VP}+\text {FP}+\text 
                                        {VN}+\text {FN}
-l.308 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
+l.316 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
                                                   $$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -665,10 +666,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:308: Undefined control sequence.
+c:/hcgalvan/Repositorios/Humai-Certifica-AI/Docu/LateX/article.tex:316: Undefined control sequence.
 <argument> \text {VP}+\text {FP}+\text {VN}+\text 
                                                   {FN}
-l.308 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
+l.316 ...{\text{VP}+\text{FP}+\text{VN}+\text{FN}}
                                                   $$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -676,7 +677,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[5] [6]
+[6]
 No file article.bbl.
 [7] (article.aux)
 
@@ -689,7 +690,7 @@ Package rerunfilecheck Warning: File `article.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `article.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  6E1ED3F0614BB800EF51DADE60E4FDF9;1042.
+(rerunfilecheck)             After:  06D2344B30AD43A286372DAB515C9294;1014.
  ) 
 Here is how much of TeX's memory you used:
  9235 strings out of 476404
@@ -700,7 +701,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  90i,7n,90p,319b,431s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on article.pdf (7 pages, 200078 bytes).
+Output written on article.pdf (7 pages, 200764 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)
