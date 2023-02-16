@@ -1,7 +1,7 @@
 *.pyc
 venv*
 __pycache__/
-data/*
+# data/*
 !data/.gitkeep
 .vscode
 *.egg-info
