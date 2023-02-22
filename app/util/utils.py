@@ -2,60 +2,49 @@ import cv2
 import mediapipe as mp 
 import pandas as pd 
 import numpy as np 
-from PIL import Image, ImageTk
+ 
+mp_pose = mp.solutions.pose
+
+def calculate_angle(a, b, c):
+    a = np.array(a)  
+    b = np.array(b)  
+    c = np.array(c)  
+
+    radians = np.arctan2(c[1] - b[1], c[0] - b[0]) -\
+              np.arctan2(a[1] - b[1], a[0] - b[0])
+    angle = np.abs(radians * 180.0 / np.pi)
+
+    if angle > 180.0:
+        angle = 360 - angle
+
+    return angle
 
 
-def reset_counter():
-	global counter
-	counter = 0
-
-def detect(cap, mp_drawing, mp_pose, counter, pose, lmain, counter_box, prob_box,class_box):
-	global current_stage
-	#global counter
-	global body_language_class
-	global body_language_prob
-	body_language_prob  = np.array([0,0])
-	body_language_class =  ''
-	cap = cv2.VideoCapture(0)
-	current_stage = ''
-	counter = 0  
-	ret , frame = cap.read()
-	image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-	result = pose.process(image)
-	mp_drawing.draw_landmarks(image, result.pose_landmarks, mp_pose.POSE_CONNECTIONS,
-		mp_drawing.DrawingSpec(color=(245,117,66), thickness=2, circle_radius=4),
-		mp_drawing.DrawingSpec(color=(245,66,230), thickness=2, circle_radius=2),
-		)
+def detection_body_part(landmarks, body_part_name):
+    return [
+        landmarks[mp_pose.PoseLandmark[body_part_name].value].x,
+        landmarks[mp_pose.PoseLandmark[body_part_name].value].y,
+        landmarks[mp_pose.PoseLandmark[body_part_name].value].visibility
+    ]
 
 
-	try:
-		row = np.array([[res.x, res.y, res.z, res.visibility] for res in result.pose_landmarks.landmark]).flatten().tolist()
-		x = pd.DataFrame([row], columns= landmarks)
-		body_language_prob = model.predict_proba(x)[0]
-		body_language_class= model.predict(x)[0]
-		
-		if body_language_class or body_language_prob:
-			print('predicted')
-		else :
-			print('prediction error')
+def detection_body_parts(landmarks):
+    body_parts = pd.DataFrame(columns=["body_part", "x", "y"])
 
-		if body_language_class == "derecha" and body_language_prob[body_language_prob.argmax()] >= 0.7:
-			current_stage = "derecha"
-			
-		elif current_stage=="derecha" and body_language_class=="izquierda" and body_language_prob[body_language_prob.argmax()] >= 0.7:
-			current_stage = "izquierda"
-			counter +=1
-		
-	except Exception as e:
-		print(e)
+    for i, lndmrk in enumerate(mp_pose.PoseLandmark):
+        lndmrk = str(lndmrk).split(".")[1]
+        cord = detection_body_part(landmarks, lndmrk)
+        body_parts.loc[i] = lndmrk, cord[0], cord[1]
 
-	img = image[:, :460, :]
-	imgarr = Image.fromarray(img)
-	imgtk = ImageTk.PhotoImage(imgarr)
-	lmain.imgtk = imgtk
-	lmain.configure(image = imgtk)
-	lmain.after(10, detect)
+    return body_parts
 
-	counter_box.configure(text=counter)
-	prob_box.configure(text=body_language_prob[body_language_prob.argmax()])
-	class_box.configure(text=current_stage)
+
+def score_table(exercise, frame , counter, status):
+    cv2.putText(frame, "Activity : " + exercise.replace("-", " "),
+                (10, 65), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2,
+                cv2.LINE_AA)
+    cv2.putText(frame, "Counter : " + str(counter), (10, 100),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
+    cv2.putText(frame, "Status : " + str(status), (10, 135),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
+    return frame
