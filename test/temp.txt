@@ -1,0 +1,91 @@
+
+    im2 = st.empty
+    f = st.file_uploader("Upload file")
+    if f is not None:
+      
+        tfile = tempfile.NamedTemporaryFile(delete=False) 
+        tfile.write(f.read())
+    
+        # PRUEBA DE CAMARA
+        cap = cv2.VideoCapture(tfile.name)
+        counter = 0 
+        current_stage = None
+
+        ## Setup mediapipe instance
+        with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
+            while cap.isOpened():
+                ret, frame = cap.read()
+                
+                if ret:
+                    # Recolor image to RGB
+                    im = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    im.flags.writeable = False
+                
+                    # Make detection
+                    results = pose.process(im)
+                
+                    # Recolor back to BGR
+                    im.flags.writeable = True
+                    im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
+                    
+                    # Detección de Pose
+                    mp_drawing.draw_landmarks(im, results.pose_landmarks, mp_pose.POSE_CONNECTIONS, 
+                                            mp_drawing.DrawingSpec(color=(245,117,66), thickness=2, circle_radius=4),
+                                            mp_drawing.DrawingSpec(color=(245,66,230), thickness=2, circle_radius=2)
+                                            )
+                    
+                    # Extract landmarks
+                    try:
+                        
+                        row = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmarks.landmark]).flatten().tolist()
+                        X = pd.DataFrame([row], columns=landmarks[1:])
+                        
+                        body_language_class = model.predict(X)[0]
+                        
+                        body_language_prob = model.predict_proba(X)[0]
+                        print(body_language_class, body_language_prob)
+                        
+                        if body_language_class or body_language_prob:
+                            print('predicted')
+                        else :
+                            print('prediction error')
+
+                        if body_language_class == "derecha" and body_language_prob[body_language_prob.argmax()] >= 0.7:
+                            current_stage = "derecha"
+                        elif current_stage=="derecha" and body_language_class=="izquierda" and body_language_prob[body_language_prob.argmax()] >= 0.7:
+                            current_stage = "izquierda"
+                            counter +=1
+                            
+                        # obtener el estado del box
+                        cv2.rectangle(im, (0,0), (250, 60), (245, 117, 16), -1)
+                        
+                        # Mostrar las clases
+                        cv2.putText(im, 'CLASS'
+                                    , (95,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                        cv2.putText(im, body_language_class.split(' ')[0]
+                                    , (90,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                        
+                        # Mostrar Probabilidad
+                        cv2.putText(im, 'PROB'
+                                    , (15,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                        cv2.putText(im, str(round(body_language_prob[np.argmax(body_language_prob)],2))
+                                , (10,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                        
+                        # Mostrar Conteo
+                        cv2.putText(im, 'COUNT'
+                                    , (180,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
+                        cv2.putText(im, str(counter)
+                                    , (175,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            
+                        
+                    except Exception as e:
+                        pass
+                    
+                    im2.image(im, channels='BGR', use_column_width=True)
+                    #cv2.imshow('Raw Webcam Feed', stframe.image(image))
+                else:
+                    break
+            
+
+    #cap.release()
+    #cv2.destroyAllWindows()

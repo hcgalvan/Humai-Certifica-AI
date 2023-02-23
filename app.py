@@ -2,11 +2,13 @@ import logging
 import threading
 from pathlib import Path
 from typing import List, NamedTuple, Optional
-from app import landmarks, app_manos, predict_manos
+from app import landmarks
 ## modelos ###
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline 
 from sklearn.preprocessing import StandardScaler 
+
+from app import landmarks, app_manos, predict_manos
 
 from sklearn.linear_model import LogisticRegression, RidgeClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
@@ -16,6 +18,37 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score # Accu
 import pandas as pd
 import streamlit as st
 import pathlib
+##
+import cv2
+import mediapipe as mp
+import numpy as np
+###
+import pathlib
+import pickle 
+import matplotlib.pyplot as plt
+
+import tempfile
+###
+import streamlit as st
+from streamlit_webrtc import (
+    RTCConfiguration,
+    WebRtcMode,
+    WebRtcStreamerContext,
+    webrtc_streamer,
+)
+
+HERE = Path(__file__).parent
+model = pathlib.PurePath('data/flexiones_cb.pkl')
+video_1 = pathlib.PurePath('data/flexiones_1.mp4')
+logger = logging.getLogger(__name__)
+
+mp_drawing = mp.solutions.drawing_utils
+mp_pose = mp.solutions.pose
+
+RTC_CONFIGURATION = RTCConfiguration(
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
+       
 
 st.set_page_config(
     page_title="Biomecanica&ML",
@@ -29,22 +62,17 @@ st.set_page_config(
     }
 )
 
-HERE = Path(__file__).parent
-model_rc = pathlib.PurePath('data/push_ups.pkl')
-data_rc = pathlib.PurePath('data/pushups.csv')
-model_path_1 = pathlib.PurePath('data/manos.pkl')
-model_path_2 = pathlib.PurePath('data/manos.csv')
-data = pd.read_csv(model_path_2)
-logger = logging.getLogger(__name__)
 
 
 def main():
     st.header("Biomecánica: Detección en Tiempo real")
     pages = {
-        "Modelos Utilizados": modelos,
-        "Predict Push UP": testRidgeClassifier,
-        "Detección manos": app_manos,
+        "Ejemplo 1": modelos_1,
+        "Ejemplo 2": modelos_2,
+        "Ejemplo 3": modelos_3,
+        #"Detección manos": app_manos,
         "Predict mov manos": predict_manos
+        
         
     }
     page_titles = pages.keys()
@@ -55,97 +83,73 @@ def main():
     st.subheader(page_title)
     page_func = pages[page_title]
     page_func()
-
-def modelos():
-    # st.sidebar.title("Visualizar Seteos")
-    # eleccion = st.sidebar.radio(
-    #             "Modelos",
-    #             ("RidgeClassifier","RandomForestClassifier","GradientBoostingClassifier")
-    #         )
-    #  st.write(eleccion)    
-
-    df = data
-    X = df.drop('class', axis=1) # features
-    y = df['class'] # target
     
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1234)
-    
-    pipelines = {
-    #'lr':make_pipeline(StandardScaler(), LogisticRegression()),
-    'rc':make_pipeline(StandardScaler(), RidgeClassifier()),
-    'rf':make_pipeline(StandardScaler(), RandomForestClassifier()),
-    'gb':make_pipeline(StandardScaler(), GradientBoostingClassifier()),
-    }
-    
-    fit_models = {}
-    for algo, pipeline in pipelines.items():
-        model = pipeline.fit(X_train, y_train)
-        fit_models[algo] = model
-    
-    logger.debug("=== Alive threads ===")
-    for thread in threading.enumerate():
-        if thread.is_alive():
-            logger.debug(f"  {thread.name} ({thread.ident})")
 
-    rcp = fit_models['rc'].predict(X_test)
-    
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown('_X test_')
-        st.table(X_test.iloc[0:5])
+def modelos_1():
+    #video_file = open('notebooks/flexiones-demo.mp4', 'rb')
+    #video_bytes = video_file.read()
 
-    with col2:
-        st.markdown('_y test_')
-        st.table(y_test.iloc[0:5])
+    #st.video(video_bytes)
 
-    with col3:
-        st.markdown('_Predicción_')
-        st.table(rcp[0:5])
+    DEFAULT_WIDTH = 80
+    VIDEO_DATA = "https://youtu.be/Wfv2_328TQE"
         
-    for algo, model in fit_models.items():
-        yhat = model.predict(X_test)
-        st.write('Modelo: ',algo, 'Accuracy Score: ', accuracy_score(y_test, yhat),'Precision Score: ',
-          precision_score(y_test.values, yhat,average="weighted",pos_label="derecha"),'Recall Score: ',
-          recall_score(y_test.values, yhat, average="weighted", pos_label="derecha"))
 
-def testRidgeClassifier():
-    
-    df = data_rc.drop('class', axis=1) # features
-    with open( model_path_1, 'rb') as f:
-            self.model = pickle.load(f)    
-    fit_models = {}
-    for algo, pipeline in pipelines.items():
-        model = pipeline.fit(X_train, y_train)
-        fit_models[algo] = model
-    
-    logger.debug("=== Alive threads ===")
-    for thread in threading.enumerate():
-        if thread.is_alive():
-            logger.debug(f"  {thread.name} ({thread.ident})")
+    #st.set_page_config(layout="wide")
 
-    rcp = fit_models['rc'].predict(X_test)
-    
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown('_X test_')
-        st.table(X_test.iloc[0:5])
+    width = st.sidebar.slider(
+        label="Width", min_value=0, max_value=100, value=DEFAULT_WIDTH, format="%d%%"
+    )
 
-    with col2:
-        st.markdown('_y test_')
-        st.table(y_test.iloc[0:5])
+    width = max(width, 0.01)
+    side = max((100 - width) / 2, 0.01)
 
-    with col3:
-        st.markdown('_Predicción_')
-        st.table(rcp[0:5])
-        
-    for algo, model in fit_models.items():
-        yhat = model.predict(X_test)
-        st.write('Modelo: ',algo, 'Accuracy Score: ', accuracy_score(y_test, yhat),'Precision Score: ',
-          precision_score(y_test.values, yhat,average="weighted",pos_label="derecha"),'Recall Score: ',
-          recall_score(y_test.values, yhat, average="weighted", pos_label="derecha"))
+    _, container, _ = st.columns([side, width, side])
+    container.video(data=VIDEO_DATA)
+
+def modelos_2():
+    #video_file = open('notebooks/flexiones-demo.mp4', 'rb')
+    #video_bytes = video_file.read()
+
+    #st.video(video_bytes)
+
+    DEFAULT_WIDTH = 80
+    VIDEO_DATA = "https://youtu.be/DQATepYNVZ8"
  
+    #st.set_page_config(layout="wide")
 
+    width = st.sidebar.slider(
+        label="Width", min_value=0, max_value=100, value=DEFAULT_WIDTH, format="%d%%"
+    )
+
+    width = max(width, 0.01)
+    side = max((100 - width) / 2, 0.01)
+
+    _, container, _ = st.columns([side, width, side])
+    container.video(data=VIDEO_DATA)
     
+    
+def modelos_3():
+    #video_file = open('notebooks/flexiones-demo.mp4', 'rb')
+    #video_bytes = video_file.read()
+
+    #st.video(video_bytes)
+
+    DEFAULT_WIDTH = 80
+    VIDEO_DATA = "notebooks/flexiones-demo.mp4"
+ 
+    #st.set_page_config(layout="wide")
+
+    width = st.sidebar.slider(
+        label="Width", min_value=0, max_value=100, value=DEFAULT_WIDTH, format="%d%%"
+    )
+
+    width = max(width, 0.01)
+    side = max((100 - width) / 2, 0.01)
+
+    _, container, _ = st.columns([side, width, side])
+    container.video(data=VIDEO_DATA)
+        
 if __name__ == "__main__":
     import os
 
