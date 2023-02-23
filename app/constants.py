@@ -7,7 +7,7 @@ import streamlit as st
 import mediapipe as mp
 import pathlib
 import pickle 
-from app import landmarks
+#from app import landmarks
 
 from streamlit_webrtc import (
     RTCConfiguration,
@@ -15,8 +15,12 @@ from streamlit_webrtc import (
     WebRtcStreamerContext,
     webrtc_streamer,
 )
+landmarks = ['class']
 
-model_path_1 = pathlib.PurePath('data/manos.pkl')
+for val in range(1,33+1):
+    landmarks += ['x{}'.format(val), 'y{}'.format(val), 'z{}'.format(val), 'v{}'.format(val)]
+
+model_path_1 = pathlib.PurePath('data/flexiones_cb.pkl')
 
 RTC_CONFIGURATION = RTCConfiguration(
     {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
@@ -108,7 +112,7 @@ class predict_manos:
                     
                     row = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmarks.landmark]).flatten().tolist()
                     X = pd.DataFrame([row], columns=landmarks[1:])
-                    
+                    X = X.values
                     self.body_language_class = self.model.predict(X)[0]
                     
                     self.body_language_prob = self.model.predict_proba(X)[0]
@@ -119,10 +123,10 @@ class predict_manos:
                     else :
                         print('prediction error')
 
-                    if self.body_language_class == "derecha" and self.body_language_prob[self.body_language_prob.argmax()] >= 0.7:
-                        self.current_stage = "derecha"
-                    elif self.current_stage=="derecha" and self.body_language_class=="izquierda" and self.body_language_prob[self.body_language_prob.argmax()] >= 0.7:
-                        self.current_stage = "izquierda"
+                    if self.body_language_class == "arriba" and self.body_language_prob[self.body_language_prob.argmax()] >= 0.7:
+                        self.current_stage = "Arriba"
+                    elif self.current_stage=="Arriba" and self.body_language_class=="izquierda" and self.body_language_prob[self.body_language_prob.argmax()] >= 0.7:
+                        self.current_stage = "Abajo"
                         self.counter +=1
                         
                     # obtener el estado del box
@@ -144,7 +148,7 @@ class predict_manos:
                     cv2.putText(image, 'COUNT'
                                 , (180,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
                     cv2.putText(image, str(self.counter)
-                                , (175,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                                , (195,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
         
                 except Exception as e:
                     pass

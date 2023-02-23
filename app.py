@@ -71,7 +71,7 @@ def main():
         "Ejemplo 2": modelos_2,
         "Ejemplo 3": modelos_3,
         #"Detección manos": app_manos,
-        "Predict mov manos": predict_manos
+        "Predict On Line": predict_manos
         
         
     }
